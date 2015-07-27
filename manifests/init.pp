@@ -18,7 +18,6 @@ class etckeeper (
   # validate parameters here
 
   class { '::etckeeper::install': } ->
-  class { '::etckeeper::config': } ~>
-  class { '::etckeeper::service': } ->
+  class { '::etckeeper::config': } ->
   Class['::etckeeper']
 }

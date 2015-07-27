@@ -16,9 +16,7 @@ describe 'etckeeper' do
           it { is_expected.to contain_class('etckeeper::params') }
           it { is_expected.to contain_class('etckeeper::install').that_comes_before('etckeeper::config') }
           it { is_expected.to contain_class('etckeeper::config') }
-          it { is_expected.to contain_class('etckeeper::service').that_subscribes_to('etckeeper::config') }
 
-          it { is_expected.to contain_service('etckeeper') }
           it { is_expected.to contain_package('etckeeper').with_ensure('present') }
         end
       end
